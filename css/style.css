@@ -1425,6 +1425,30 @@ span, a, a:hover {
   color: #5eee82;
 }
 
+/* Elementos de classe "form-group" de tag <label> */
+.contact .contact-form .form-group label {
+  margin-bottom: 0.2em;
+  color: #050505;
+  display: block;
+}
+/* Elementos de classe "form-group" de tag <select> e <option>*/
+.contact .contact-form .form-group select option {
+  padding-right: 1em;
+}
+/* Elemento de classe "form-group" com tag <input>, <select> e <textarea> tocas com estado da pseudoclasse "focus"*/
+.contact .contact-form .form-group input:focus,
+.contact .contact-form .form-group select:focus,
+.contact .contact-form .form-group textarea:focus {
+  background: #d7d7d8;
+}
+/* Elementos de classe ".form-group" da tag <select> >*/
+.form-group select {
+  padding: 0.2em;
+  border: 1px solid #383739;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+  display: block;
+}
+
 /* ----------------------------------------------------------------
      [ End Contact ]
 -----------------------------------------------------------------*/

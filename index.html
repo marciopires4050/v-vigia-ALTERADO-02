@@ -669,11 +669,21 @@
                                             <input id="form_email" type="email" name="email" placeholder="Email" required="required">
                                         </div>
                                     </div>
-                                    <div class="col-md-12">
+
+                                    <div class="col-md-6">                                    
+                                        <!-- Campo Assunto (select option) e css de classe "campo" -->
                                         <div class="form-group">
-                                            <input id="form_subject" type="text" name="subject" placeholder="Assunto">
+                                            <label for="assunto"><strong>Assunto</strong></label>
+                                            <select id="assunto" required="required">
+												<option selected disabled value="">Selecione</option>
+												<option value="financeiro">financeiro</option>
+												<option value="cancelamento">cancelamento</option>
+												<option value="trabalhe conosco ">trabalhe conosco </option>
+												<option value="sugestão/ reclamação / elogio">sugestão/ reclamação / elogio</option>                                       
+                                            </select>
                                         </div>
                                     </div>
+                                    
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <textarea id="form_message" name="message" placeholder="Mensagem" rows="4" required="required"></textarea>
