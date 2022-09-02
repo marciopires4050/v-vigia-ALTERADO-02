@@ -1547,6 +1547,15 @@ footer p {
   .serv-tabs .tabs-icon .item h6 {
     display: none;
   }
+
+  .clients .brand {
+    margin-left: 110px;
+    width: 250px;
+    padding: 15px 0;
+    opacity: .5;
+    margin-top: 20px;
+}
+
 }
 
 /*# sourceMappingURL=style.css.map */
