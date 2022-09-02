@@ -1339,6 +1339,12 @@ span, a, a:hover {
   border-radius: 5px;
   cursor: pointer;  
 }
+.information .info .item .cor2 {
+  padding: 15px 15px 40px 0px;
+}
+.information .info .item .cor3 {
+  padding: 15px 15px 0px 0px;
+}
 
 .information .info .item:last-child {
   margin-bottom: 0;
@@ -1423,6 +1429,33 @@ span, a, a:hover {
 }
 .contact .contact-form button[type='submit']:hover span {
   color: #5eee82;
+}
+
+/* Elementos de classe "form-group" de tag <label> */
+.contact .contact-form .form-group label {
+  margin-bottom: 0.2em;
+  color: #999;
+  display: block;
+  padding: 5px;
+}
+/* Elementos de classe "form-group" de tag <select> e <option>*/
+.contact .contact-form .form-group select option {
+  padding-right: 1em;
+}
+/* Elemento de classe "form-group" com tag <input>, <select> e <textarea> tocas com estado da pseudoclasse "focus"*/
+.contact .contact-form .form-group input:focus,
+.contact .contact-form .form-group select:focus,
+.contact .contact-form .form-group textarea:focus {
+  background: #d7d7d8;
+}
+/* Elementos de classe ".form-group" da tag <select> >*/
+.form-group select {
+  display: inline;
+  border: 0;
+  background: #f7f7f7;
+  border-radius: 5px;
+  width: 100%;
+  padding: 10px;
 }
 
 /* ----------------------------------------------------------------
@@ -1547,15 +1580,6 @@ footer p {
   .serv-tabs .tabs-icon .item h6 {
     display: none;
   }
-
-  .clients .brand {
-    margin-left: 110px;
-    width: 250px;
-    padding: 15px 0;
-    opacity: .5;
-    margin-top: 20px;
-}
-
 }
 
 /*# sourceMappingURL=style.css.map */
