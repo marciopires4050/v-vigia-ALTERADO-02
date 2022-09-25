@@ -141,15 +141,63 @@ $(function() {
         }
     });
 
+    // inicialização do popup
+    $(document).ready(function() {
+        $('.image-link').magnificPopup({type:'image'});
+      });
 
     // magnificPopup
-    $('.gallery').magnificPopup({
-        delegate: '.popimg',
-        type: 'inline',
-        gallery: {
-            enabled: true
-        }
+    $(document).ready(function() {
+
+        $('.gallery').magnificPopup({
+            delegate: '.popimg',
+            type: 'inline',
+            gallery: {
+                enabled: true
+            }
+        });
+
     });
+
+    // magnificPopup teste
+    $('.test-popup-link').magnificPopup({
+        type: 'image'
+        // other options
+      });
+
+    // magnificPopup iframe
+    $('.video').magnificPopup({
+        type: 'iframe',
+        
+        
+        iframe: {
+          patterns: {
+            dailymotion: {
+             
+              index: 'dailymotion.com',
+              
+              id: function(url) {        
+                  var m = url.match(/^.+dailymotion.com\/(video|hub)\/([^_]+)[^#]*(#video=([^_&]+))?/);
+                  if (m !== null) {
+                      if(m[4] !== undefined) {
+                        
+                          return m[4];
+                      }
+                      return m[2];
+                  }
+                  return null;
+              },
+              
+              src: 'video/vegas.mp4' 
+              
+            }
+          }
+        }
+        
+        
+      });
+
+
 
     // YouTubePopUp
     $("a.vid").YouTubePopUp();
