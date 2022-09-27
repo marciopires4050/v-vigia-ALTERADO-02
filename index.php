@@ -690,18 +690,18 @@
 
                                     <div class="col-md-6">
                                         <div class="form-group" >
-                                            <input id="username" type="text" name="name" placeholder="Nome" required>
+                                            <input type="text" id="contatoNome" name="contatoNome" placeholder="Nome" required>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input id="form_email" type="email" name="email" placeholder="Email" required>
+                                            <input type="email" id="contatoEmail" name="contatoEmail" placeholder="Email" required>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
                                 
-                                            <select id="assunto" name="assunto" required>
+                                            <select id="assunto" name="contatoAssunto" required>
                                                 <option selected disabled value="">Selecione</option>
                                                 <option value="financeiro">financeiro</option>
                                                 <option value="cancelamento">cancelamento</option>
@@ -713,12 +713,12 @@
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <textarea id="form_message" name="message" placeholder="Mensagem" rows="4" required></textarea>
+                                            <textarea id="mensagembox" name="contatoMensagem" placeholder="Mensagem" rows="4" required></textarea>
                                         </div>
                                     </div>
 
                                     <div class="col-md-12 text-center">
-                                        <button type="submit" name="AddMsgCont"><span>Enviar</span></button>
+                                        <button type="submit"><span>Enviar</span></button>
                                     </div>
 
                                 </div>                             
