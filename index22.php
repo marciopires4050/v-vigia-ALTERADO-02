@@ -1,3 +1,7 @@
+<?php
+ include_once './conexao.php';
+?>
+
 <!DOCTYPE html>
  <html lang="zxx">
 
@@ -51,6 +55,31 @@
     </head>
 
     <body>
+
+
+    <?php
+    $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+
+    if (!empty($dados['AddMsgCont'])) {
+        //var_dump($dados);
+
+        $query_contato = "INSERT INTO formulario (email, name, assunto, message) VALUES (:email, :name, :assunto, :message)";
+        $add_contato = $conn->prepare($query_contato);
+        $add_contato->bindParam(':email', $dados['email'], PDO::PARAM_STR);
+        $add_contato->bindParam(':name', $dados['name'], PDO::PARAM_STR);       
+        $add_contato->bindParam(':assunto', $dados['assunto'], PDO::PARAM_STR);
+        $add_contato->bindParam(':message', $dados['message'], PDO::PARAM_STR);
+
+        $add_contato->execute();
+
+        if($add_contato->rowCount()){
+            echo "<p style='color: green;'>Mensagem enviada com sucesso!</p>";
+        }else{
+            echo "<p style='color: #f00;'>Erro: Mensagem não enviada com sucesso!</p>";
+        }
+
+    }
+    ?>
 
     	<!-- =====================================
     	==== Start Loading -->
@@ -673,6 +702,14 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <input id="form_subject" type="text" name="subject" placeholder="Assunto">
+                                            <select id="assunto" name="assunto" required="required">
+                                                <option selected disabled value="">Selecione</option>
+                                                <option value="financeiro">financeiro</option>
+                                                <option value="cancelamento">cancelamento</option>
+                                                <option value="orcamento">orçamento</option>
+                                                <option value="trabalhe conosco ">trabalhe conosco </option>
+                                                <option value="sugestão/ reclamação / elogio">sugestão/ reclamação / elogio</option>                                       
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
