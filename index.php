@@ -1,3 +1,7 @@
+<?php
+ include_once './conexao.php';
+?>
+
 <!DOCTYPE html>
  <html lang="zxx">
 
@@ -51,6 +55,30 @@
     </head>
 
     <body>
+
+    <?php
+    $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+
+    if (!empty($dados['AddMsgCont'])) {
+        //var_dump($dados);
+
+        $query_contato = "INSERT INTO formulario (email, name, assunto, message) VALUES (:email, :name, :assunto, :message)";
+        $add_contato = $conn->prepare($query_contato);
+        $add_contato->bindParam(':email', $dados['email'], PDO::PARAM_STR);
+        $add_contato->bindParam(':name', $dados['name'], PDO::PARAM_STR);       
+        $add_contato->bindParam(':assunto', $dados['assunto'], PDO::PARAM_STR);
+        $add_contato->bindParam(':message', $dados['message'], PDO::PARAM_STR);
+
+        $add_contato->execute();
+
+        if($add_contato->rowCount()){
+            echo "<p style='color: green;'>Mensagem enviada com sucesso!</p>";
+        }else{
+            echo "<p style='color: #f00;'>Erro: Mensagem não enviada com sucesso!</p>";
+        }
+
+    }
+    ?>
 
     	<!-- =====================================
     	==== Start Loading -->
@@ -645,7 +673,7 @@
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3686.1412117808795!2d-44.09566927439643!3d-22.49888443794923!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9ebd5381d23c03%3A0x608a72599d6c7881!2sAv.%20N.%20Sra.%20do%20Amparo%2C%2099%20-%20Niter%C3%B3i%2C%20Volta%20Redonda%20-%20RJ%2C%2027283-370!5e0!3m2!1spt-BR!2sbr!4v1656882601652!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                     <div class="col-lg-6 contact-form">
-                        <form class="form" id="form" method="post" action="">
+                        <form class="form" id="form" method="post" action="conexao.php">
 
                             <div class="messages"></div>
 
@@ -672,7 +700,15 @@
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <input id="form_subject" type="text" name="subject" placeholder="Assunto">
+                                
+                                            <select id="assunto" name="assunto" required="required">
+                                                <option selected disabled value="">Selecione</option>
+                                                <option value="financeiro">financeiro</option>
+                                                <option value="cancelamento">cancelamento</option>
+                                                <option value="orcamento">orçamento</option>
+                                                <option value="trabalhe conosco ">trabalhe conosco </option>
+                                                <option value="sugestão/ reclamação / elogio">sugestão/ reclamação / elogio</option>                                       
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
