@@ -43,6 +43,11 @@
         <link rel="stylesheet" href="css/style.css" />
         <link rel="stylesheet" href="css/style4.css" />
 
+        <!-- Plugins modal de vídeo -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="js/videopopup.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/videopopup.css" media="screen" />
+
     </head>
 
     <body>
@@ -280,12 +285,14 @@
                                         <h6>Vegas Vigilância</h6>
                                         
                                     </div>
-                                    <a class="video" href="https://www.youtube.com/watch?v=Ydr5fPIc6sM" >
+                                    <a class="video" href="video/vegas.mp4" >
                                         <i class="icofont icofont-video"></i>
                                     </a>
                                 </div>
                             </div>
-                        </div>                
+                        </div>    
+                        
+                    
 
                         <!-- gallery item -->
                         <div class="col-md-4 items foto">
@@ -871,6 +878,17 @@ crossorigin="anonymous"
 ></script>
 
 <script src="./scripts4.js"></script>
+
+<script type="text/javascript">
+    $(function() {
+        $('#vidBox').VideoPopUp({
+            backgroundColor: "#17212a",
+            opener: "video1",
+            idvideo: "v1",
+            pausevideo: false
+        });
+    });
+</script>
 
     </body>
 
