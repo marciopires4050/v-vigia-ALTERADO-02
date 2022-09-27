@@ -1,8 +1,8 @@
 <?php
-define("SERVIDOR", "138.97.105.145");
-define("USUARIO", "eletroar");
-define("SENHA", "gss2B?52");
-define("BANCO","eletroar");
+define("SERVIDOR", "br356.hostgator.com.br");
+define("USUARIO", "vegasvig_2022");
+define("SENHA", "BBE7Lyhc?VSS");
+define("BANCO","vegasvig_2022");
 session_name('eletroar');
 session_start([
     'cookie_lifetime' => 86400,
